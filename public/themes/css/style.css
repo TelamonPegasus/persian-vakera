@@ -1,0 +1,89 @@
+@import url('../fonts/vazir.css');
+
+:root {
+    --offcanvas-width: 270px;
+    --topNavbarHeight: 0;
+    --bs-orange: #FF5202;
+    --bs-navy: #2D3046;
+    --bs-silver: #b8bdbd;
+}
+
+.sidebar-nav {
+    width: var(--offcanvas-width) !important;
+    background-color: #0f2b48;
+}
+
+.sidebar-link {
+    display: flex;
+    align-items: center;
+}
+
+.sidebar-link .right-icon {
+    display: inline-flex;
+}
+
+.sidebar-link[aria-expanded="true"] .right-icon {
+    transform: rotate(180deg);
+}
+
+.card-body-icon {
+    z-index: 0;
+    top: 25px;
+    left: 8px;
+    opacity: 0.4;
+    font-size: 90px;
+}
+
+@media (min-width: 992px) {
+    body {
+        overflow: auto !important;
+    }
+
+    main {
+        margin-right: var(--offcanvas-width);
+    }
+
+    .offcanvas-backdrop::before {
+        display: none;
+    }
+
+    .sidebar-nav {
+        -webkit-transform: none !important;
+        transform: none !important;
+        visibility: visible !important;
+        height: calc(100% - var(--topNavbarHeight));
+        --top: var(--topNavbarHeight);
+    }
+}
+
+body.bg {
+    background: url("../images/bg.png") no-repeat center 0;
+    background-size: cover;
+}
+
+.square a {
+    width: 100px;
+    font-size: 25px;
+}
+
+.square {
+    border-image-source: url("../images/square.png");
+    border-image-slice: 30 fill; /* You can adjust the slice value as needed */
+    border-image-width: 30px;
+    border-image-outset: 0; /* You can adjust the outset value as needed */
+    border-image-repeat: round; /* You can use 'stretch', 'repeat', or 'round' */
+}
+
+.icon-text {
+    left: 5px;
+    bottom: 5px;
+}
+
+.text-paragraph {
+    color: #fff3cd;
+}
+
+.img-cart {
+    width: 110px !important;
+    height: 108px !important;
+}
